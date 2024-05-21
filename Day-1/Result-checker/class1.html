@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h2 {
+        text-align: center;
+        color: brown;
+    }
+
+    table {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    td{
+        width: 200px;
+        border: 2px solid sienna;
+    }
+    input{
+        border: none;
+    }
+    button{
+        background-color: brown;
+        color: white;
+        padding: 10px 50px;
+        border: none;
+        border-radius: 10px;
+    }
+    
+</style>
+
+<body>
+    <h2>Check Result</h2>
+    <table>
+        <tr>
+            <td>Hindi</td>
+            <td><input type="text" id="hindi"></td>
+        </tr>
+        <tr>
+            <td>English</td>
+            <td><input type="text" id="english"></td>
+
+        </tr>
+        <tr>
+            <td>Math's</td>
+            <td><input type="text" id="maths"></td>
+        </tr>
+        <tr>
+            <td>Social Science</td>
+            <td><input type="text" id="social"></td>
+        </tr>
+        <tr>
+            <td>Science</td>
+            <td><input type="text" id="science"></td>
+        </tr>
+        <tr>
+        <td colspan="2"><button type="submit" id="submit" value="submit" onclick="result()">Submit</button></td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td id="total"></td>
+        </tr>
+
+        <tr>
+            <td>Percent</td>
+            <td id="percent"></td>
+        </tr>
+    </table>
+    <script>
+        function result() {
+            let hindi = parseInt(document.getElementById("hindi").value);
+            let english = parseInt(document.getElementById("english").value);
+            let maths = parseInt(document.getElementById("maths").value);
+            let social = parseInt(document.getElementById("social").value);
+            let science = parseInt(document.getElementById("science").value);
+            let total = hindi + english + maths + social + science;
+            let percent = total / 5;
+            document.getElementById("total").innerHTML = total;
+            document.getElementById("percent").innerHTML = percent;
+        }
+    </script>
+</body>
+
+</html>
